@@ -33,10 +33,26 @@ const linesPerRepo = await Promise.all(
   })
 );
 
-console.table([
+const sortedTable = [
   ...linesPerRepo.sort((a, b) => b.nbLines - a.nbLines),
   {
-    repo: "total",
+    repo: "Total",
     nbLines: linesPerRepo.reduce((acc, { nbLines }) => acc + nbLines, 0),
   },
-]);
+];
+console.table(sortedTable);
+
+const { stdout: Readme } = await $`cat ${__dirname}/README.md`;
+const tagStart = "<!--table:start-->";
+const tagEnd = "<!--table:end-->";
+const generatedMarkdownTable = `${tagStart}
+| Repo | Lines |
+| ---- | ----- |
+${sortedTable.map(({ repo, nbLines }) => `| ${repo} | ${nbLines} |`).join("\n")}
+${tagEnd}`;
+
+const newReadme = Readme.replace(/\n$/, "").replace(
+  new RegExp(tagStart + "[\\s\\S]+" + tagEnd, "gm"),
+  generatedMarkdownTable
+);
+await $`echo ${newReadme} > ${__dirname}/README.md`;

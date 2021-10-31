@@ -12,4 +12,7 @@ jobs:
         with:
           node-version: "16"
       - run: sudo apt install fd-find
-      - run: npx zx ./count-publicodes-lines.mjs
+      - run: npx zx ./count-publicodes-lines.mjs --quiet
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_author: Github Actions <actions@github.com>
