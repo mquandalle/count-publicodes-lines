@@ -8,16 +8,15 @@ const publicodesRepos = {
 };
 
 const workingDirectory = "/tmp/count-lines";
-await $`rm -rf ${workingDirectory}`;
-await $`mkdir ${workingDirectory}`;
+await fs.emptyDir(workingDirectory);
+cd(workingDirectory);
 
 const linesPerRepo = await Promise.all(
   Object.entries(publicodesRepos).map(async ([repo, dir]) => {
-    cd(workingDirectory);
     await $`git clone https://github.com/${repo}.git --depth 1`;
     const searchDirectory = repo.split("/")[1] + "/" + dir;
-    const { stdout } = await $`fdfind . ${searchDirectory} -e yaml -X wc -l`;
-    const nbLines = parseInt(stdout.split("\n").at(-2));
+    const command = $`find ${searchDirectory} -name '*.yaml' -exec cat {} \\;`;
+    const nbLines = parseInt((await command.pipe($`wc -l`)).stdout);
     return { repo, nbLines };
   })
 );
@@ -42,7 +41,7 @@ if (process.argv.slice(2).includes("--update")) {
   const formatNumber = (n) => n.toLocaleString("en");
   const generatedMarkdownTable = `${tagStart}
 | Repository | Lines |
-| --- | --- |
+| --- | --: |
 ${sortedTable
   .map(({ repo, nbLines }) => `| ${repoUrl(repo)} | ${formatNumber(nbLines)} |`)
   .join("\n")}
