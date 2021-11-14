@@ -5,6 +5,7 @@ const publicodesRepos = {
   "SocialGouv/code-du-travail-numerique":
     "packages/code-du-travail-modeles/src/modeles",
   "laem/futureco-data": "",
+  "mquandalle/mesaidesvelo": "src",
 };
 
 const workingDirectory = "/tmp/count-lines";
