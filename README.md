@@ -3,12 +3,12 @@
 <!--table:start-->
 | Repository | Lines |
 | --- | --: |
-| [betagouv/mon-entreprise](https://github.com/betagouv/mon-entreprise/tree/master/modele-social/règles) | 10,766 |
+| [betagouv/mon-entreprise](https://github.com/betagouv/mon-entreprise/tree/master/modele-social/règles) | 10,763 |
+| [datagir/nosgestesclimat](https://github.com/datagir/nosgestesclimat/tree/master/data) | 3,973 |
 | [laem/futureco-data](https://github.com/laem/futureco-data/tree/master/) | 3,928 |
-| [datagir/nosgestesclimat](https://github.com/datagir/nosgestesclimat/tree/master/data) | 3,924 |
-| [SocialGouv/code-du-travail-numerique](https://github.com/SocialGouv/code-du-travail-numerique/tree/master/packages/code-du-travail-modeles/src/modeles) | 2,796 |
-| [mquandalle/mesaidesvelo](https://github.com/mquandalle/mesaidesvelo/tree/master/src) | 364 |
-| Total | 21,778 |
+| [SocialGouv/code-du-travail-numerique](https://github.com/SocialGouv/code-du-travail-numerique/tree/master/packages/code-du-travail-modeles/src/modeles) | 3,004 |
+| [mquandalle/mesaidesvelo](https://github.com/mquandalle/mesaidesvelo/tree/master/src) | 1,562 |
+| Total | 23,230 |
 <!--table:end-->
 
 This table is generated with a script that counts the number of lines of publicodes files in each referenced repository. Feel free to add your project in the script!
