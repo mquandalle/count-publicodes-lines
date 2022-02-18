@@ -1,6 +1,12 @@
 #!/usr/bin/env zx
+
+// Where to find the publicode files in each Github repository
 const publicodesRepos = {
-  "betagouv/mon-entreprise": "modele-social/règles",
+  "betagouv/mon-entreprise": [
+    "modele-social/règles",
+    "exoneration-covid/règles",
+    "site/source/pages/Gerer/DemandeMobilite",
+  ],
   "datagir/nosgestesclimat": "data",
   "SocialGouv/code-du-travail-numerique":
     "packages/code-du-travail-modeles/src/modeles",
@@ -13,11 +19,14 @@ await fs.emptyDir(workingDirectory);
 cd(workingDirectory);
 
 const linesPerRepo = await Promise.all(
-  Object.entries(publicodesRepos).map(async ([repo, dir]) => {
+  Object.entries(publicodesRepos).map(async ([repo, dirs]) => {
     await $`git clone https://github.com/${repo}.git --depth 1`;
-    const searchDirectory = repo.split("/")[1] + "/" + dir;
-    const command = $`find ${searchDirectory} -name '*.yaml' -exec cat {} \\;`;
-    const nbLines = parseInt((await command.pipe($`wc -l`)).stdout);
+    let nbLines = 0;
+    for (const dir of [dirs].flat()) {
+      const searchDirectory = repo.split("/")[1] + "/" + dir;
+      const command = $`find ${searchDirectory} -name '*.yaml' -exec cat {} \\;`;
+      nbLines += parseInt((await command.pipe($`wc -l`)).stdout);
+    }
     return { repo, nbLines };
   })
 );
@@ -37,7 +46,9 @@ if (process.argv.slice(2).includes("--update")) {
   const tagEnd = "<!--table:end-->";
   const repoUrl = (name) =>
     name in publicodesRepos
-      ? `[${name}](https://github.com/${name}/tree/master/${publicodesRepos[name]})`
+      ? `[${name}](https://github.com/${name}/tree/master/${
+          [publicodesRepos[name]].flat()[0]
+        })`
       : name;
   const formatNumber = (n) => n.toLocaleString("en");
   const generatedMarkdownTable = `${tagStart}
