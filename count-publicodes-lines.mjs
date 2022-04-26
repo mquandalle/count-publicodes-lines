@@ -5,7 +5,7 @@ const publicodesRepos = {
   "betagouv/mon-entreprise": [
     "modele-social/règles",
     "exoneration-covid/règles",
-    "site/source/pages/Gerer/DemandeMobilite",
+    "site/source/pages/gerer/demande-mobilité",
   ],
   "datagir/nosgestesclimat": "data",
   "SocialGouv/code-du-travail-numerique":
