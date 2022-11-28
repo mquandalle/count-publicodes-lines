@@ -14,6 +14,10 @@ const publicodesRepos = {
   "mquandalle/mesaidesvelo": "src",
 };
 
+const extraFlags = {
+  "datagir/nosgestesclimat": ["-not", "-name", "translated-rules-*"],
+};
+
 const workingDirectory = "/tmp/count-lines";
 await fs.emptyDir(workingDirectory);
 cd(workingDirectory);
@@ -24,7 +28,8 @@ const linesPerRepo = await Promise.all(
     let nbLines = 0;
     for (const dir of [dirs].flat()) {
       const searchDirectory = repo.split("/")[1] + "/" + dir;
-      const command = $`find ${searchDirectory} -name '*.yaml' -exec cat {} \\;`;
+      const flags = [...(extraFlags[repo] ?? []), "-name", "*.yaml"];
+      const command = $`find ${searchDirectory} ${flags} -exec cat {} \\;`;
       nbLines += parseInt((await command.pipe($`wc -l`)).stdout);
     }
     return { repo, nbLines };
