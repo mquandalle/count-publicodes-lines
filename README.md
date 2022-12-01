@@ -3,12 +3,12 @@
 <!--table:start-->
 | Repository | Lines |
 | --- | --: |
-| [betagouv/mon-entreprise](https://github.com/betagouv/mon-entreprise/tree/master/modele-social/règles) | 13,377 |
+| [betagouv/mon-entreprise](https://github.com/betagouv/mon-entreprise/tree/master/modele-social/règles) | 13,402 |
 | [datagir/nosgestesclimat](https://github.com/datagir/nosgestesclimat/tree/master/data) | 7,264 |
 | [laem/futureco-data](https://github.com/laem/futureco-data/tree/master/) | 4,912 |
 | [mquandalle/mesaidesvelo](https://github.com/mquandalle/mesaidesvelo/tree/master/src) | 4,616 |
 | [SocialGouv/code-du-travail-numerique](https://github.com/SocialGouv/code-du-travail-numerique/tree/master/packages/code-du-travail-modeles/src/modeles) | 3,758 |
-| Total | 33,927 |
+| Total | 33,952 |
 <!--table:end-->
 
 This table is generated with a script that counts the number of lines of publicodes files in each referenced repository. Feel free to add your project in the script!
