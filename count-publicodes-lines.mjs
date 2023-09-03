@@ -7,7 +7,7 @@ const publicodesRepos = {
     "exoneration-covid/règles",
     "site/source/pages/assistants/demande-mobilité/",
   ],
-  "datagir/nosgestesclimat": "data",
+  "incubateur-ademe/nosgestesclimat": "data",
   "SocialGouv/code-du-travail-numerique":
     "packages/code-du-travail-modeles/src/modeles",
   "laem/futureco-data": "",
@@ -15,7 +15,11 @@ const publicodesRepos = {
 };
 
 const extraFlags = {
-  "datagir/nosgestesclimat": ["-not", "-name", "translated-rules-*"],
+  "incubateur-ademe/nosgestesclimat": [
+    "-not",
+    "-path",
+    "nosgestesclimat/data/i18n/*",
+  ],
 };
 
 const workingDirectory = "/tmp/count-lines";
@@ -28,7 +32,16 @@ const linesPerRepo = await Promise.all(
     let nbLines = 0;
     for (const dir of [dirs].flat()) {
       const searchDirectory = repo.split("/")[1] + "/" + dir;
-      const flags = [...(extraFlags[repo] ?? []), "-name", "*.yaml"];
+      const flags = [
+        ...(extraFlags[repo] ?? []),
+        "(",
+        "-name",
+        "*.yaml",
+        "-o",
+        "-name",
+        "*.publicodes",
+        ")",
+      ];
       const command = $`find ${searchDirectory} ${flags} -exec cat {} \\;`;
       nbLines += parseInt((await command.pipe($`wc -l`)).stdout);
     }
