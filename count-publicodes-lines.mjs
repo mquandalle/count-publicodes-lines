@@ -8,10 +8,14 @@ const publicodesRepos = {
     "site/source/pages/assistants/demande-mobilité/",
   ],
   "incubateur-ademe/nosgestesclimat": "data",
+  "incubateur-ademe/modele-numerique": "rules",
+  "incubateur-ademe/benefriches": "apps/publicodes-rules/rules",
   "SocialGouv/code-du-travail-numerique":
     "packages/code-du-travail-modeles/src/modeles",
   "laem/futureco-data": "",
-  "mquandalle/mesaidesvelo": "src",
+  "clemog/train-voiture": "src/data",
+  "revolunet/ovh-k8s-cost-calculator": "src",
+  "mquandalle/mesaidesvelo": ["src", "retrofit"],
 };
 
 const extraFlags = {
