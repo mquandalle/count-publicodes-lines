@@ -16,6 +16,7 @@ const publicodesRepos = {
   "clemog/train-voiture": "src/data",
   "revolunet/ovh-k8s-cost-calculator": "src",
   "mquandalle/mesaidesvelo": ["src", "retrofit"],
+  "ekofest/publicodes-evenements": "rules",
 };
 
 const extraFlags = {
