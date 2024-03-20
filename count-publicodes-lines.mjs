@@ -16,6 +16,7 @@ const publicodesRepos = {
   "revolunet/ovh-k8s-cost-calculator": "src",
   "mquandalle/mesaidesvelo": ["src", "retrofit"],
   "ekofest/publicodes-evenements": "rules",
+  "betagouv/reno": "app/règles",
 };
 
 const extraFlags = {
