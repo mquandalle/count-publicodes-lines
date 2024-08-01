@@ -3,17 +3,17 @@
 <!--table:start-->
 | Repository | Lines |
 | --- | --: |
-| [incubateur-ademe/nosgestesclimat](https://github.com/incubateur-ademe/nosgestesclimat/tree/master/data) | 17,394 |
-| [SocialGouv/code-du-travail-numerique](https://github.com/SocialGouv/code-du-travail-numerique/tree/master/packages/code-du-travail-modeles/src/modeles) | 15,853 |
-| [betagouv/mon-entreprise](https://github.com/betagouv/mon-entreprise/tree/master/modele-social/règles) | 15,345 |
+| [incubateur-ademe/nosgestesclimat](https://github.com/incubateur-ademe/nosgestesclimat/tree/master/data) | 17,559 |
+| [SocialGouv/code-du-travail-numerique](https://github.com/SocialGouv/code-du-travail-numerique/tree/master/packages/code-du-travail-modeles/src/modeles) | 15,457 |
+| [betagouv/mon-entreprise](https://github.com/betagouv/mon-entreprise/tree/master/modele-social/règles) | 15,378 |
 | [mquandalle/mesaidesvelo](https://github.com/mquandalle/mesaidesvelo/tree/master/src) | 6,839 |
 | [laem/futureco-data](https://github.com/laem/futureco-data/tree/master/) | 4,998 |
-| [betagouv/reno](https://github.com/betagouv/reno/tree/master/app/règles) | 1,750 |
+| [betagouv/reno](https://github.com/betagouv/reno/tree/master/app/règles) | 4,083 |
+| [incubateur-ademe/modele-numerique](https://github.com/incubateur-ademe/modele-numerique/tree/master/rules) | 2,033 |
 | [ekofest/publicodes-evenements](https://github.com/ekofest/publicodes-evenements/tree/master/rules) | 1,643 |
-| [incubateur-ademe/modele-numerique](https://github.com/incubateur-ademe/modele-numerique/tree/master/rules) | 1,614 |
 | [revolunet/ovh-k8s-cost-calculator](https://github.com/revolunet/ovh-k8s-cost-calculator/tree/master/src) | 329 |
 | [clemog/train-voiture](https://github.com/clemog/train-voiture/tree/master/src/data) | 212 |
-| Total | 65,977 |
+| Total | 68,531 |
 <!--table:end-->
 
 This table is generated with a script that counts the number of lines of publicodes files in each referenced repository. Feel free to add your project in the script!
